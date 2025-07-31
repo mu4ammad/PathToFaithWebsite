@@ -29,12 +29,13 @@
         .main-content p:last-child {
             margin-bottom: 0;
         }
-        .chapter-link {
+        .chapter-card {
             transition: all 0.2s ease-in-out;
+            cursor: pointer;
         }
-        .chapter-link:hover {
-            transform: scale(1.05);
-            background-color: #e2e8f0;
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         .nav-link {
             transition: all 0.2s ease-in-out;
@@ -92,20 +93,28 @@
         // Store chapter content and metadata in an object
         const chapters = {
             'home': {
-                title: 'Welcome to The Path to Faith',
+                title: 'The Path to Faith',
                 content: `
                     <div class="text-center py-16">
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">The Path to Faith</h1>
                         <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-                            A guide to understanding and strengthening your relationship with Allah. This book explores the fundamental principles of a fulfilling life, addressing the interplay between material needs, moral relationships, and the spiritual path.
+                            A document exploring the fundamental principles of a fulfilling life, addressing the interplay between material needs, moral relationships, and the spiritual path.
                         </p>
-                        <div class="mt-8 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                            <a href="#chapter-1" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300" onclick="navigateTo('chapter-1')">
-                                Start Reading Chapter 1
-                            </a>
-                            <a href="javascript:void(0);" class="bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-300 transition duration-300 cursor-not-allowed">
-                                Read the Full Book (Coming Soon)
-                            </a>
+                    </div>
+
+                    <div class="mt-12">
+                        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Chapters</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="chapter-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center" onclick="navigateTo('chapter-1')">
+                                <div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-2xl mb-4">1</div>
+                                <h3 class="text-xl font-bold mb-2">Lesson 1</h3>
+                                <p class="text-gray-600">The human desire to improve life through material and moral relationships.</p>
+                            </div>
+                            <div class="chapter-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center cursor-not-allowed opacity-50">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-2xl mb-4">2</div>
+                                <h3 class="text-xl font-bold mb-2">Coming Soon</h3>
+                                <p class="text-gray-500">This chapter is not yet available.</p>
+                            </div>
                         </div>
                     </div>
                 `
@@ -127,32 +136,38 @@
                     </div>
 
                     <div class="visualization-container bg-white rounded-lg shadow-lg p-6 my-8">
-                        <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Conceptual Visualization: Life's Challenges</h3>
-                        <!-- A simple SVG to visualize the concepts discussed in the chapter. -->
-                        <!-- This can be replaced with a more complex visualization later. -->
+                        <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Conceptual Visualization: Life's Foundations</h3>
+                        <!-- A more descriptive SVG visualization for the chapter's concepts. -->
                         <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid meet">
                             <defs>
                                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
                                     <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280" />
                                 </marker>
                             </defs>
-                            <g class="transition-all duration-500 ease-in-out">
+                            <g>
                                 <rect x="325" y="50" width="150" height="70" rx="10" fill="#E2E8F0" stroke="#CBD5E0" stroke-width="2" />
-                                <text x="400" y="90" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Life's Difficulties</text>
+                                <text x="400" y="90" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Desire to Improve Life</text>
                             </g>
 
                             <!-- Branch 1: Material Wealth -->
-                            <g class="transition-all duration-500 ease-in-out">
-                                <path d="M400 120 V 170" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <g>
+                                <path d="M400 120 V 170 H 250" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)" />
                                 <rect x="100" y="170" width="150" height="70" rx="10" fill="#FEEBCB" stroke="#F6AD55" stroke-width="2" />
-                                <text x="175" y="210" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Material Wealth</text>
+                                <text x="175" y="210" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Material Relationships</text>
                             </g>
 
                             <!-- Branch 2: Moral Relationships -->
-                            <g class="transition-all duration-500 ease-in-out">
-                                <path d="M400 120 V 170" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)" />
+                            <g>
+                                <path d="M400 120 V 170 H 550" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)" />
                                 <rect x="550" y="170" width="150" height="70" rx="10" fill="#D1FAE5" stroke="#38A169" stroke-width="2" />
                                 <text x="625" y="210" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Moral Relationships</text>
+                            </g>
+
+                             <!-- Sub-branch from Moral Relationships -->
+                            <g>
+                                <path d="M625 240 V 290" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)" />
+                                <rect x="550" y="290" width="150" height="70" rx="10" fill="#EBF4FF" stroke="#3182CE" stroke-width="2" />
+                                <text x="625" y="330" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Foundation: Morality</text>
                             </g>
                         </svg>
                     </div>
@@ -174,7 +189,7 @@
                 window.scrollTo(0, 0); // Scroll to the top of the page
                 updateActiveNav(chapterKey);
             } else {
-                mainContentElement.innerHTML = `<h1 class="text-3xl font-bold">404 - Not Found</h1><p class="mt-4">The requested chapter could not be found.</p>`;
+                mainContentElement.innerHTML = `<div class="text-center py-16"><h1 class="text-3xl font-bold">404 - Not Found</h1><p class="mt-4">The requested chapter could not be found.</p></div>`;
                 document.title = '404 - Not Found';
                 updateActiveNav(null);
             }
