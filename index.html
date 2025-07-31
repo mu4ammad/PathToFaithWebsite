@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Path to Faith</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+        }
+        .main-content h1, .main-content h2, .main-content h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .main-content h1 { font-size: 2.25rem; }
+        .main-content h2 { font-size: 1.875rem; }
+        .main-content h3 { font-size: 1.5rem; }
+        .main-content p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        .main-content p:last-child {
+            margin-bottom: 0;
+        }
+        .chapter-link {
+            transition: all 0.2s ease-in-out;
+        }
+        .chapter-link:hover {
+            transform: scale(1.05);
+            background-color: #e2e8f0;
+        }
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-link:hover {
+            color: #4a5568;
+        }
+        .active-link {
+            font-weight: 700;
+            color: #1a202c;
+            border-bottom: 2px solid #4a5568;
+        }
+        .visualization-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .visualization-container svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors duration-200" onclick="navigateTo('home')">The Path to Faith</a>
+            <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                <a href="#home" class="nav-link text-gray-600 hover:text-gray-800 transition-colors duration-200" onclick="navigateTo('home')">Home</a>
+                <a href="#chapter-1" class="nav-link text-gray-600 hover:text-gray-800 transition-colors duration-200" onclick="navigateTo('chapter-1')">Chapter 1</a>
+                <!-- Add more chapters here as you add them -->
+                <a href="#" class="nav-link text-gray-400 cursor-not-allowed">Chapter 2 (Coming Soon)</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="container mx-auto px-4 py-8 flex-grow">
+        <!-- Content will be injected here by JavaScript -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+        <p>&copy; 2025 The Path to Faith. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Store chapter content and metadata in an object
+        const chapters = {
+            'home': {
+                title: 'Welcome to The Path to Faith',
+                content: `
+                    <div class="text-center py-16">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">The Path to Faith</h1>
+                        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+                            A guide to understanding and strengthening your relationship with Allah. This book explores the fundamental principles of a fulfilling life, addressing the interplay between material needs, moral relationships, and the spiritual path.
+                        </p>
+                        <div class="mt-8 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#chapter-1" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition duration-300" onclick="navigateTo('chapter-1')">
+                                Start Reading Chapter 1
+                            </a>
+                            <a href="javascript:void(0);" class="bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-300 transition duration-300 cursor-not-allowed">
+                                Read the Full Book (Coming Soon)
+                            </a>
+                        </div>
+                    </div>
+                `
+            },
+            'chapter-1': {
+                title: 'Chapter 1: The Path to Faith',
+                content: `
+                    <div class="prose max-w-none">
+                        <p class="text-xl italic font-serif text-gray-600">In the name of Allah, the Most Gracious, the Most Merciful.</p>
+                        <h2>Lesson 1</h2>
+                        <p>All people in the world strive to improve their lives. They struggle to overcome difficulties and eliminate shortcomings, endeavoring to make today better than yesterday. The desire to improve one's life is inherent to all humans, and this is indeed the main purpose of living. However, to achieve this same goal, people act in various ways. When we observe people's lives, we see that some believe that overcoming life's difficulties is connected to material wealth, and they engage in various activities to increase their wealth.</p>
+                        <p>Indeed, material wealth has its own importance in improving human life. Because as long as a person is alive, they are compelled to interact with material things such as housing, clothing, and necessary household items. Without material things essential for life, a person cannot live peacefully. After all, how can a person left in the cold without warm clothes and shelter be at peace? This is why many people engage in commerce, farming, and crafts to obtain necessary wealth.</p>
+                        <p>In conclusion, saying that a happy life is possible without material things necessary for life is nothing but ignorance. However, saying that life improves only through material wealth is also not wisdom. Because along with material relationships, humans are also compelled to have moral relationships.</p>
+                        <p>Moral relationships refer to a person's relationships with others. For example, fatherhood, friendship, kinship, and neighborhood relationships. Although wealth serves as a foundation for people's material relationships, wealth cannot be the foundation for moral relationships. Because difficulties arising in moral relationships cannot be resolved through wealth. Many examples can be given for this. For instance, if someone's parents reject them, or if friends abandon them, or if a spouse betrays them, they begin to suffer from pangs of conscience. Conscience is not something that can be bought and sold with money. The fact that great kings of the past also experienced moral suffering and could not find a cure despite having all the wealth of entire kingdoms is clear evidence of this. In conclusion, difficulties arising in moral relationships cannot be resolved through wealth.</p>
+                        <p>The foundation for overcoming difficulties arising in moral relationships is morality. Only when a person possesses proper morality can they resolve them. Whether a person's moral relationships are right or wrong depends on their morality.</p>
+                        <p>For example, a child's morality refers to how they behave in their relationships with their parents. If they have proper relationships, they are considered well-mannered; otherwise, they are considered ill-mannered.</p>
+                        <p>Moral relationships encompass material relationships. A person who can resolve moral difficulties can also easily overcome material obstacles. For example, it is natural for a father who wants his children to grow up to be virtuous to provide them with the necessary material things. This is why many people today strive to occupy high positions in society, increase their acquaintances, and gain respect and honor to improve their lives.</p>
+                        <p>It is evident that whatever people do today, they actually want to eliminate their material and moral difficulties. Of course, every person dreams of creating the most beautiful material and most sincere moral relationships. But dreams are one thing, and life is another. If life matched people's dreams, there would not be a single suffering person left on earth. In reality, people's lives are getting worse day by day despite their efforts to improve them. In such situations, people become those who find joy in remembering their past and suffer from their present. There's no need to even mention the future. Because when today's problems are increasing compared to yesterday's, how can one speak of a bright future? Of course, when efforts to improve life don't yield results, it's natural for any person to lose hope for the future. Due to this increase in suffering, people lose hope for a bright future and find solutions like "If time doesn't look favorably upon you, you look favorably upon time." But this situation cannot be proof that there will be no bright future. Rather, it indicates that people need to change their actions toward their goal so that this new action yields results and people's lives improve day by day. To achieve such action, a person must consider another relationship in life. Let us become acquainted with this relationship.</p>
+                    </div>
+
+                    <div class="visualization-container bg-white rounded-lg shadow-lg p-6 my-8">
+                        <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Conceptual Visualization: Life's Challenges</h3>
+                        <!-- A simple SVG to visualize the concepts discussed in the chapter. -->
+                        <!-- This can be replaced with a more complex visualization later. -->
+                        <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280" />
+                                </marker>
+                            </defs>
+                            <g class="transition-all duration-500 ease-in-out">
+                                <rect x="325" y="50" width="150" height="70" rx="10" fill="#E2E8F0" stroke="#CBD5E0" stroke-width="2" />
+                                <text x="400" y="90" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Life's Difficulties</text>
+                            </g>
+
+                            <!-- Branch 1: Material Wealth -->
+                            <g class="transition-all duration-500 ease-in-out">
+                                <path d="M400 120 V 170" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)" />
+                                <rect x="100" y="170" width="150" height="70" rx="10" fill="#FEEBCB" stroke="#F6AD55" stroke-width="2" />
+                                <text x="175" y="210" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Material Wealth</text>
+                            </g>
+
+                            <!-- Branch 2: Moral Relationships -->
+                            <g class="transition-all duration-500 ease-in-out">
+                                <path d="M400 120 V 170" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)" />
+                                <rect x="550" y="170" width="150" height="70" rx="10" fill="#D1FAE5" stroke="#38A169" stroke-width="2" />
+                                <text x="625" y="210" text-anchor="middle" font-size="16" font-weight="600" fill="#2D3748">Moral Relationships</text>
+                            </g>
+                        </svg>
+                    </div>
+                `
+            }
+            // You can add more chapters here in the same format
+            // 'chapter-2': { title: 'Chapter 2: ...', content: '...' }
+        };
+
+        const mainContentElement = document.getElementById('main-content');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Function to render content based on the chapter key
+        function renderChapter(chapterKey) {
+            const chapter = chapters[chapterKey];
+            if (chapter) {
+                mainContentElement.innerHTML = chapter.content;
+                document.title = chapter.title;
+                window.scrollTo(0, 0); // Scroll to the top of the page
+                updateActiveNav(chapterKey);
+            } else {
+                mainContentElement.innerHTML = `<h1 class="text-3xl font-bold">404 - Not Found</h1><p class="mt-4">The requested chapter could not be found.</p>`;
+                document.title = '404 - Not Found';
+                updateActiveNav(null);
+            }
+        }
+
+        // Function to update the active navigation link
+        function updateActiveNav(chapterKey) {
+            navLinks.forEach(link => {
+                link.classList.remove('active-link');
+                const href = link.getAttribute('href').substring(1);
+                if (href === chapterKey) {
+                    link.classList.add('active-link');
+                }
+            });
+        }
+
+        // Handle navigation and URL changes
+        function navigateTo(chapterKey) {
+            if (chapters[chapterKey]) {
+                const newUrl = window.location.origin + window.location.pathname + `#${chapterKey}`;
+                window.history.pushState({ chapter: chapterKey }, chapterKey, newUrl);
+                renderChapter(chapterKey);
+            }
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', (event) => {
+            const chapterKey = event.state ? event.state.chapter : 'home';
+            renderChapter(chapterKey);
+        });
+
+        // Initial page load logic
+        window.onload = () => {
+            const chapterKey = window.location.hash ? window.location.hash.substring(1) : 'home';
+            if (chapters[chapterKey]) {
+                // Use history.replaceState to set the initial state without adding a new history entry
+                window.history.replaceState({ chapter: chapterKey }, chapterKey, `#${chapterKey}`);
+                renderChapter(chapterKey);
+            } else {
+                // If an invalid hash is provided, default to the home page
+                navigateTo('home');
+            }
+        };
+    </script>
+</body>
+</html>
